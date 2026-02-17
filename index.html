@@ -9,34 +9,37 @@
 body{
     margin:0;
     font-family: 'Segoe UI', sans-serif;
-    height:100vh;
+    min-height:100vh;
     display:flex;
     align-items:center;
     justify-content:center;
     background: linear-gradient(135deg,#ff9ecf,#ffc3a0);
-    overflow:hidden;
+    overflow-y:auto;   /* ✅ allow scroll */
+    padding:20px 10px; /* ✅ spacing on small screens */
+    box-sizing:border-box;
 }
 
 .card{
     background:white;
-    padding:40px;
+    padding:25px;
     border-radius:20px;
     text-align:center;
     box-shadow:0 20px 50px rgba(0,0,0,0.2);
     max-width:420px;
-    width:90%;
+    width:100%;
     transition:0.6s;
 }
 
 h1{
     color:#ff3c8d;
     margin-bottom:20px;
+    font-size:24px;
 }
 
 .options button{
     display:block;
     width:100%;
-    margin:12px 0;
+    margin:10px 0;
     padding:14px;
     border:none;
     border-radius:12px;
@@ -63,14 +66,18 @@ h1{
     align-items:center;
     justify-content:center;
     visibility:hidden;
+    padding:20px;
+    box-sizing:border-box;
 }
 
 .popup-content{
     background:white;
-    padding:30px;
+    padding:25px;
     border-radius:15px;
     text-align:center;
     animation:pop 0.4s ease;
+    max-width:350px;
+    width:100%;
 }
 
 @keyframes pop{
@@ -82,17 +89,31 @@ h1{
 .bday{
     display:none;
     text-align:center;
+    padding:20px;
+    max-width:500px;
 }
 
 .bday h2{
-    font-size:38px;
+    font-size:28px;
     color:white;
     animation:glow 2s infinite alternate;
+}
+
+.bday h3{
+    font-size:18px;
+    color:white;
 }
 
 @keyframes glow{
     from{text-shadow:0 0 10px #fff;}
     to{text-shadow:0 0 30px #ff3c8d;}
+}
+
+/* 📱 extra small phone fix */
+@media (max-width:400px){
+    .bday h2{
+        font-size:22px;
+    }
 }
 </style>
 </head>
@@ -111,14 +132,12 @@ h1{
     </div>
 </div>
 
-<!-- Birthday Screen -->
 <div class="bday" id="bday">
     <h2>Happy Birthday Cutuuuuuu 💖😝, Aap jeet gayi ho unlimited date package with Titu baby 🎉 plus 1000 birthday-special kisses full of loveee 😘💋 </h2>
     <h2> Iske saath free unlimited hugs 🤗, lifetime active listening service 👂, upgraded pampering functionality 😌✨, mood-fix support system 💕, aur 24/7 smile maintenance guarantee 😄💫</h2>
-<h3>+91 9023596082 is number par contact karo wo dega..🫢</h3>
+    <h3>+91 9023596082 is number par contact karo wo dega..🫢</h3>
 </div>
 
-<!-- Popup -->
 <div class="popup" id="popup">
     <div class="popup-content">
         <h2>❌ Wrong Answer 😝</h2>
