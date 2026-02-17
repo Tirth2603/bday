@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Question of the Day 💖</title>
+
+<style>
+body{
+    margin:0;
+    font-family: 'Segoe UI', sans-serif;
+    height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    background: linear-gradient(135deg,#ff9ecf,#ffc3a0);
+    overflow:hidden;
+}
+
+.card{
+    background:white;
+    padding:40px;
+    border-radius:20px;
+    text-align:center;
+    box-shadow:0 20px 50px rgba(0,0,0,0.2);
+    max-width:420px;
+    width:90%;
+    transition:0.6s;
+}
+
+h1{
+    color:#ff3c8d;
+    margin-bottom:20px;
+}
+
+.options button{
+    display:block;
+    width:100%;
+    margin:12px 0;
+    padding:14px;
+    border:none;
+    border-radius:12px;
+    font-size:16px;
+    cursor:pointer;
+    background:linear-gradient(45deg,#ff5fa2,#ff9966);
+    color:white;
+    transition:0.3s;
+}
+
+.options button:hover{
+    transform:scale(1.05);
+}
+
+/* Popup */
+.popup{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,0.6);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    visibility:hidden;
+}
+
+.popup-content{
+    background:white;
+    padding:30px;
+    border-radius:15px;
+    text-align:center;
+    animation:pop 0.4s ease;
+}
+
+@keyframes pop{
+    from{transform:scale(0.5); opacity:0}
+    to{transform:scale(1); opacity:1}
+}
+
+/* Birthday screen */
+.bday{
+    display:none;
+    text-align:center;
+}
+
+.bday h2{
+    font-size:38px;
+    color:white;
+    animation:glow 2s infinite alternate;
+}
+
+@keyframes glow{
+    from{text-shadow:0 0 10px #fff;}
+    to{text-shadow:0 0 30px #ff3c8d;}
+}
+</style>
+</head>
+
+<body>
+
+<div class="card" id="quiz">
+    <h1>💌 Question of the Day</h1>
+    <p>Who is the most beautiful thing in this world? 😏</p>
+
+    <div class="options">
+        <button onclick="wrong()">Kids 👶</button>
+        <button onclick="wrong()">Humans 👫</button>
+        <button onclick="wrong()">Birds 🕊️</button>
+        <button onclick="wrong()">Animals 🐶</button>
+    </div>
+</div>
+
+<!-- Birthday Screen -->
+<div class="bday" id="bday">
+    <h2>Happy Birthday Cutuuuuuu 💖😝, Aap jeet gayi ho unlimited date package with Titu baby 🎉 plus 1000 birthday-special kisses full of loveee 😘💋 </h2>
+    <h2> Iske saath free unlimited hugs 🤗, lifetime active listening service 👂, upgraded pampering functionality 😌✨, mood-fix support system 💕, aur 24/7 smile maintenance guarantee 😄💫</h2>
+<h3>+91 9023596082 is number par contact karo wo dega..🫢</h3>
+</div>
+
+<!-- Popup -->
+<div class="popup" id="popup">
+    <div class="popup-content">
+        <h2>❌ Wrong Answer 😝</h2>
+        <p>It's my love for you, idiot! 💕</p>
+        <button onclick="showBirthday()" style="margin-top:15px;padding:10px 20px;border:none;border-radius:8px;background:#ff3c8d;color:white;cursor:pointer;">Next ➜</button>
+    </div>
+</div>
+
+<script>
+function wrong(){
+    document.getElementById("popup").style.visibility="visible";
+}
+
+function showBirthday(){
+    document.getElementById("popup").style.display="none";
+    document.getElementById("quiz").style.display="none";
+    document.getElementById("bday").style.display="block";
+    document.body.style.background="linear-gradient(135deg,#ff3c8d,#ff9966)";
+}
+</script>
+
+</body>
+</html>
